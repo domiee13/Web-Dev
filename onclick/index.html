@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Onclick</title>
+</head>
+<body>
+	<a href="test.html">Baitap1</a>
+	<a href="test3.html">Baitap3</a>
+	<input id="newItem" type="text" name="">
+	<button onclick="addItem()">ADD</button>
+	<h1>Todo list</h1>
+	<div id="todoList">
+		<ul>
+			<!-- <li>Go to school</li>
+			<li>Cooking lunch</li>
+			<li>Code like a god</li> -->
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var todo = [
+			'Go to school',
+			'Cooking lunch',
+			'Code like a god'
+		];
+		
+		var addItem = function(){
+			//Lay item tu input
+			var input = document.getElementById('newItem');
+			var newItem = input.value;
+			//Them item vao todo list
+			todo.push(newItem);
+			//re-render
+			render();
+			input.value = "";
+		}
+		function render(){
+			content = todo.map(function(item){
+				return '<li>' + item + '</li>';
+			});
+			todoList.innerHTML = content.join('');	
+		}
+
+		var todoList = document.getElementById('todoList');
+		var content = "";
+		console.log(typeof content);
+		
+		console.log(content);
+		console.log(typeof content);
+		
+		render();
+	</script>
+</body>
+</html>

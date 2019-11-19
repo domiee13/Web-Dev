@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Onclick</title>
+</head>
+<body>
+	<a href="danhBa.html">DanhBa</a>
+	<input id="newItem" type="text" name="">
+	<button id = "add-btn">ADD</button>
+	<h1>Todo list</h1>
+	<div id="todoList">
+		<ul>
+			<!-- <li>Go to school</li>
+			<li>Cooking lunch</li>
+			<li>Code like a god</li> -->
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var data = [];
+		var storageKey = 'list';
+		var dataString = localStorage.getItem(storageKey);
+		var todo = JSON.parse(dataString);
+
+		if(dataString){
+			todo = JSON.parse(dataString);
+		}
+		else todo = [];
+
+		var addBtn = document.getElementById("add-btn");
+ 		// addBtn.onclick = addItem;
+
+ 		addBtn.addEventListener('click',addItem);
+		var input = document.getElementById('newItem');
+		input.value = sessionStorage.getItem('draft');
+		input.addEventListener('change',updateSessionStorage);
+		function updateSessionStorage(){
+			sessionStorage.setItem('draft',input.value);
+		}
+		function addItem(){
+			//Lay item tu input
+			var newItem = input.value;
+			//Them item vao todo list
+			todo.push(newItem);
+			//re-render
+			render();
+			input.value = "";
+			//Store data\
+			localStorage.setItem(storageKey, JSON.stringify(todo));
+		}
+
+		function removeIt(){
+			//Danh dau 1 viec da lam xong . . . Programing . . .
+		}
+
+		function render(){
+			var todoList = document.getElementById('todoList');
+			var content = "";
+			content = todo.map(function(item){
+				return '<li>' + item + '</li>'+ '<button onclick="removeIt()">Done</button>';
+			});
+			todoList.innerHTML = content.join('');	
+		}
+
+
+		
+		render();
+	</script>
+</body>
+</html>

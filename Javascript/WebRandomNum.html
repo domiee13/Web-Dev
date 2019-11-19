@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <title>Random Number</title>
+    <h1>Random Number</h1>
+    <style>
+        h1{
+            text-align: center;
+        }
+        #button{
+            border:none;
+            text-transform: uppercase;
+            background-color: aqua;
+            display: block;
+            font-weight: bold;
+            margin-left:580px;
+            font: 100px;
+            margin-top:10px;
+        }
+        #button:hover{
+            transform:scale(1.1);
+        }
+        #res{
+            padding-left:580px;
+        }
+        p{
+            padding-left:550px;
+        }
+        #input_a,#input_b{
+            margin-left:550px;
+        }
+    </style>
+    <body>
+        <div id = "res"></div>
+        <p>Ban muon random trong khoang nao?</p></br>
+        <p>Nhap a:</p><input type="text" id="input_a" value="">
+        <p>Nhap b:</p><input type="text" id="input_b" value="">
+       
+        <input type="button" id = "button" value="Random 0-100">
+        <script>
+            var a = document.getElementById("input_a");
+            var b = document.getElementById("input_b");
+            
+            var res = document.getElementById("res");
+            function random(){
+                var num = Math.floor(Math.random()*(parseInt(b.value)-parseInt(a.value))+parseInt(a.value));
+                res.innerHTML = "Random Number: "+ num;
+                console.log(num);
+            }
+            var button = document.getElementById("button");
+            button.onclick = function(){
+                random();
+            }
+        </script>
+    </body>
+
+</html>

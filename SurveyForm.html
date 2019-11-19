@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<style>
+	:root{
+		margin:0;
+		padding:0;
+	}
+	#title{
+		
+		text-align: center;
+		margin:0;
+	}
+	#description{
+		text-align: center;
+		margin-top:0px;
+		padding-bottom: 10px;
+	}
+	#name-label,#email-label,#number-label{
+		margin-right: 200px;
+	}
+	#name-label{
+		margin-top: 10px;
+	}
+	.info{
+		display: flex;
+		flex-direction: column;
+		padding-right: 10px;
+	}
+	.info p{
+		padding-left: 270px;
+	}
+	#checkbox{
+		display: flex;
+		flex-direction: column;
+	}
+	#radio{
+		display: flex;
+		flex-direction: column;
+	}
+	#checkbox1{
+		display: flex;
+		flex-direction: column;
+	}
+	body{
+		background-color: #5DBCD2;
+	}
+	
+	#comment{
+		width: 200px;
+		height: 100px;
+		text-align: top;
+	}
+	#survey-form{
+		background-color:white;
+		margin-right: 200px;
+		margin-left: 200px;
+		align-items: center;
+		box-shadow: 5px 10px gray;
+		display: grip;
+		grid-template-columns: 100px 1fr;
+		grid-gap:20px;
+		
+	}
+	#formgr{
+		margin-left: 150px;
+		display: grid;
+      	grid-template-columns: 250px 3fr;
+      	grid-gap: 10px;
+/*      	align-items: center;
+*/	}
+	p{
+		padding-top:0px;
+		padding-left: 10px;
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+	}
+	#dropdown{
+		margin-right: 200px;
+	}
+	.button{
+		background-color: #76c7c1;
+    	color: #2d6363;
+    	text-transform: uppercase;
+
+	}
+	.button:hover{
+		color:#8ed2d1;
+	}
+</style>
+
+<head>
+	<h1 id="title">Survey Form </h1>
+
+</head>
+
+<body>
+	<p id="description"> <center><em>Let us know how we can improve freeCodeCamp </em></center> </p>
+	<form id="survey-form">
+		
+			
+		
+		<div id="formgr">
+			<p>Name:</p>
+			<input type="text" placeholder="Your name please" name="" id="name-label" required>
+			
+			<p>Email:</p>
+			<input type="text" placeholder="Your email" name="" id="email-label" required >
+			
+			<p>Age:</p>
+			<input type="text" placeholder="Your age" name="" id ="number-label" pattern="[16-30]" title="Your age in [16-30]">
+			
+		<p>Which option best describes your current role?</p>
+		<select id="dropdown">
+			<option disabled selected>Select an option</option>
+			<option>Student</option>
+			<option>Full time job</option>
+			<option>Prefer not to say</option>
+			<option>Full time Leaner</option>
+		</select>
+		<p>How likely is that you would recommend freeCodeCamp to a friend?</p>
+		<label id="radio">
+			<div><input type="radio" name="choice" value="Definitely">Definitely</div>
+			<div><input type="radio" name="choice" value="Maybe">Maybe</div>
+			<div><input type="radio" name="choice" value="Not sure">Not sure</div>
+		</label>
+		<p>What do you like most in FCC:</p>
+		<select id="dropdown">
+			<option disabled selected>Select an option</option>
+			<option>Challenges</option>
+			<option>Project</option>
+			<option>Community</option>
+			<option>FOpen source</option>
+
+		</select>
+		
+		<p>Things that should be improved in the future (Check all that apply):</p>
+		<div id="checkbox1">
+			<label id="checkbox">
+				<div><input type="checkbox" name="check">Front-end Project</div>
+				<div><input type="checkbox" name="check">Back-end Projects</div>
+				<div><input type="checkbox" name="check">Data Visualization</div>
+				<div><input type="checkbox" name="check">Challenges</div>
+				<div><input type="checkbox" name="check">Open Source Community</div>
+				<div><input type="checkbox" name="check">Videos</div>
+				<div><input type="checkbox" name="check">Gitter help rooms</div>
+				<div><input type="checkbox" name="check">City Meetups</div>
+				<div><input type="checkbox" name="check">Wiki</div>
+				<div><input type="checkbox" name="check">Forum</div>
+				<div><input type="checkbox" name="check">Additional Courses</div>
+
+			</label>
+		</div>
+		<p>Any Comments or Suggestions?</p>
+		<input type="text" name="" placeholder="Enter your coment here..." id="comment">
+		<input style="grid-column: 2/3; margin-right: 270px"type="submit" class="button" id="submit">
+	</div>
+
+	
+</div>
+	</form>
+
+
+</body>
+
+
+
+
+
+
+
+

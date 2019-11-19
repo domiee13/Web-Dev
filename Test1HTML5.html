@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Day la trang de login vao 1 cai gi do</title>
+		<h1 class="green-text"> Please Login </h1>
+	</head>
+	<style>
+		
+		.green-text{
+			color:green;
+			font-size: 100px
+		}
+		.red-text{
+			color:red;
+			font-size: 30px;
+		}
+		.thin-red-border{
+			
+			border-color: red;
+			border-width:5px;
+			border-style:solid;
+			border-radius:10px;
+		}
+		.thick-green-border{
+			border-color:green;
+			border-width:7px;
+			border-style:solid;
+			border-radius:50%;
+
+		}
+		.smaller-image{
+			width: 250px;
+		}
+		.large-image{
+			width: 500px;
+		}
+		#cat-photo-form
+		{
+			background-color: green;
+		}
+		.thin-pink-border
+		{
+			border-color:pink
+			border-width:5px;
+			border-style:solid;
+			border-radius:10px;
+		}
+		/* Có thể thêm style vào form cũng được nhưng dùng id nhanh hơn rất nhiều và tiện tương tác với các element(phần tử khác )
+		chứ không chỉ mình form -> Dùng ID tiện lợi hơn add trực tiếp style vào thẻ */
+
+
+	</style>
+	<body>
+		<div>
+			<a href="#footer" class="red-text">Bam vao day de chuyen xuong cuoi trang</a>
+			<p>	
+			<input type="text" placeholder="Your username" checked required>
+				<input type="text" placeholder="Your password" checked required>
+				<button type="submits" name="Login">Login</button>
+				<button type="submits" name="Forgot password">Forgot password</button>
+				<form id="cat-photo-form" style="background-color:green; ">
+					<p style="background-color:red;">Ban co yeu meo khong?</p>
+					<label style="background-color:yellow;">
+						<input name="Co-Khong" type="radio" value="Co">Co
+					
+						<input type="radio" name="Co-Khong" value="Khong">Khong
+					</label style="background-color:yellow;">
+					<p style="background-color:red;">Gioi tinh cua ban la gi</p>
+					<label style="background-color:yellow;">
+						<input type="radio" name="gioitinh" value="Nam">Nam
+						<input type="radio" name="gioitinh" valua="Nu">Nu
+						<input type="radio" name="gioitinh" value="Khac">Khac
+					</label>
+					
+					<p style="background-color:red;">So thich cua ban?</p>
+					<div style="background-color:yellow;">
+					<input type="checkbox" name="sothich" value="Ngu">Ngu
+					<input type="checkbox" name="sothich" valua="Meo">Meo
+					<input type="checkbox" name="sothich" value="Meo">Van la meo nhung o 1 cai khac
+					<input type="checkbox" name="sothich" value="Meo">Van la meo 2
+				</div>
+				</form>
+				<img class="smaller-image thin-pink-border" src="http://ttol.vietnamnetjsc.vn//2017/04/14/15/59/chu-meo-hoa-hoang-thuong-ban-thit-rau-cute-pho-mai-que-nhat-la-day_8.jpg">
+				<img class="smaller-image thin-pink-border" src="https://i.pinimg.com/236x/f4/36/9d/f4369d816173f91f56a3d79407c54429.jpg">
+				<img class="smaller-image thin-pink-border" src="https://nhungdieuthuvi.com/wp-content/uploads/2012/10/hinh-anh-dang-yeu-cua-me-con-meo-14.jpg">
+				<p> Go to facebook.com </p>
+				<a href="facebook.com"><img class="smaller-image thick-green-border" src="https://simply-communicate.com/wp-content/uploads/2019/03/facebook-2661207_960_720.jpg"> </a>\
+				<!--
+								<p> Bam vao <a href = "Dia chi minh muuon chuyen den"> cai minh muon bien thanh link xanh</a>
+				-->
+				<p> Bam vao <a href="facebook.com"> day</a> de chuyen den trang web facebook.com </p>
+			<footer id="footer"></footer>
+		</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <p class="foo"> paragraph 1</p>
+    <p class="foo"> paragraph 2</p>
+    <p> paragraph 3</p>
+    <p class="foo"> paragraph 4</p>
+    <p class="foo"> paragraph 5</p>
+    <script>
+      var add = '<a href="https://school.coders-x.com">coders.tokyo</a>';
+			var foo = document.querySelectorAll("p.foo");
+      for(var i in foo){
+        
+          foo[i].innerHTML = foo[i].innerHTML + " " + add;
+        
+      }
+      console.log(foo);
+    </script>
+  </body>
+</html>

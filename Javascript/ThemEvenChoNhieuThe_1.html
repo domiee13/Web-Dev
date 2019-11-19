@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <input type="button" value="Button1" class = "button">
+        <input type="button" value="Button2" class = "button">
+        <input type="button" value="Button3" class = "button">
+
+    </body>
+    <script>
+        var button = document.getElementsByClassName('button');
+        for(var i = 0;i<button.length;i++){
+            button[i].onclick = function(){
+                alert("Ban vua click button");
+            }
+        }
+    </script>
+</html>

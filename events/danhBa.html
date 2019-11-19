@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Danh Ba</title>
+</head>
+<body>
+	<input id="searchBox" type="text" name="">
+	<ul id="userList">
+	</ul>
+	<script type="text/javascript">
+	var users = [
+		{ 
+	  		name: 'Thinh', 
+	    	phone: '070123123'
+		},
+	  	{
+	  		name: 'Hung',
+	    	phone: '080456456'
+	  	},
+	  	{
+	  		name: 'Hoang',
+	    	phone: '090123123'
+	  	}
+	];
+		var searchBox = document.getElementById('searchBox');
+		var userList = document.getElementById('userList');
+
+		function render(data){
+			var content = "";
+			content = data.map(function(item){
+				return '<li>'+item.name+" - "+item.phone+'</li>';
+			});
+			userList.innerHTML = content.join("");
+		}
+
+		searchBox.addEventListener('keyup',function(item){
+			var value = searchBox.value;
+			var foundList = users.filter(function(item){
+				return item.name === value;
+      			//return e.phone.indexOf(value) !== -1;	ERROR ?		
+			});
+			// if(foundList.length===0) userList.innerHTML = "Khong tim thay so dien thoai";
+			render(foundList);
+			console.log(value);
+		});
+
+		render(users);
+	</script>
+</body>
+</html>

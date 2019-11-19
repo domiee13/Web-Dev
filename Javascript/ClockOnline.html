@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        //Khoi tao dong ho
+        function startTime(){
+            //Lay thoi gian hien tai
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            //Check xem co <10 khong
+            m = checkTime(m);
+            s = checkTime(s);
+            h = checkTime(h);
+
+            document.getElementById("res").innerHTML = h +":"+m+":"+s;
+
+            var t = setTimeout(function(){
+                startTime();//Cho nay giong nhu de quy, goi ham trong ham ?
+            },500);
+        }
+        //Chuyen so be hon 10 thanh dinh dang 01 02 03,...
+        function checkTime(i){
+            if(i<10){
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+    <body onload="startTime()" style="font-size: 90px; color:aqua;">
+        <div id = "res"></div>
+    </body>
+</html>

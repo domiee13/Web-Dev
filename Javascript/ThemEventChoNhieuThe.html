@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <ul>
+            <li><a href="#" class="show">Tin công nghệ</a></li>
+            <li><a href="#">Tin trong nước</a></li>
+            <li><a href="#" class="show">Tin thời sự</a></li>
+        </ul>
+    </body>
+    <script>
+        var link = document.getElementsByClassName("show");
+        for(var i = 0;i<link.length;i++){
+            link[i].onclick = function(){
+                alert("Ban vua click vao link");
+            }
+        }
+    </script>
+</html>

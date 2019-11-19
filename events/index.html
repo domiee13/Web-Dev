@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Onclick</title>
+</head>
+<body>
+	<a href="danhBa.html">DanhBa</a>
+	<input id="newItem" type="text" name="">
+	<button id = "add-btn">ADD</button>
+	<h1>Todo list</h1>
+	<div id="todoList">
+		<ul>
+			<!-- <li>Go to school</li>
+			<li>Cooking lunch</li>
+			<li>Code like a god</li> -->
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var todo = [
+			'Go to school',
+			'Cooking lunch',
+			'Code like a god'
+		];
+		var todoList = document.getElementById('todoList');
+		var content = "";
+
+		var addBtn = document.getElementById("add-btn");
+ 		// addBtn.onclick = addItem;
+
+ 		addBtn.addEventListener('click',addItem);
+
+		function addItem(){
+			//Lay item tu input
+			var input = document.getElementById('newItem');
+			var newItem = input.value;
+			//Them item vao todo list
+			todo.push(newItem);
+			//re-render
+			render();
+			input.value = "";
+		}
+		function render(){
+			content = todo.map(function(item){
+				return '<li>' + item + '</li>';
+			});
+			todoList.innerHTML = content.join('');	
+		}
+
+
+		
+		render();
+	</script>
+</body>
+</html>

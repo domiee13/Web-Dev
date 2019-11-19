@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    </style>
+    <body>
+        <div id = "show"></div>
+        <input type = "submit" id = "button" value="STOP RANDOM">
+        <script>
+            //Lấy các đối tượng
+            var html = document.getElementsByTagName("html")[0];
+            var show = document.getElementById("show");
+            var button =document.getElementById("button");
+            // Định nghĩa hàm random
+            function random(){
+                var randomString = Math.floor(Math.random()*(100-1)+1);
+                show.innerHTML = randomString;
+            }
+            //Thêm sự kiện cho thẻ html
+            html.addEventListener("mousemove",random);
+            //Thêm sự kiện xóa random cho button
+            button.addEventListener("click", function(){
+                // Xóa hành động do_random khỏi sự kiện mousemove
+                html.removeEventListener("mousemove", random);
+            });     
+        </script>
+       
+    </body>
+</html>
+

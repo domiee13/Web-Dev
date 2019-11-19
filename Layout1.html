@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Day la layout minh tu lam</title>
+	</head>
+	<style>
+	*{
+			margin:0px;
+			padding:0px;
+		}
+		#main{
+			width:1920px;
+			padding:0px;
+			margin-left:auto;
+			margin-right:auto;
+			height: 1000px;
+			
+		}
+		#head
+		{
+			width: 1920px;
+			padding-bottom: 100px;
+			padding-top:100px;
+			height: 100px;
+			background-color: red;
+			text-align: center;
+			font-size:48px;
+			animation-name: rainbow;
+			animation-duration: 100s;
+			/*animation-fill-mode: forwards;*/
+		}
+		@keyframes rainbow{
+			0%{
+				background-color: red;
+			}
+			10%{
+				background-color:pink;
+			}
+			20%{
+				background-color: purple;
+			}
+			30%{
+				background-color: blue;
+			}
+			50%{
+				background-color: green;
+			}
+			80%{
+				background-color: yellow;
+			}
+			100%{
+				background-color: orange;
+			}
+		}
+		#menu{
+			overflow: hidden;
+			width:1920px;
+			height: 40px;
+			background-color: green;
+			position: relative;
+			text-align:center;
+			
+		}
+		#menu a{
+			
+			display:block;
+			float:left;
+			padding:10px 10px;
+			text-decoration: none;
+			color:white;
+			text-align: right;
+			}
+			
+		#menu a:hover{
+			background-color: white;
+			color:red;
+			font-weight: bold;
+		}
+		#left{
+			height:1000px;
+			float:left;
+			width:200px;
+			background: purple;
+		}
+		#left a{
+			display: block;
+			float:left;
+			padding: 10px 40px;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+		}
+		#left a:hover{
+			background-color: white;
+			color:red;
+			font-weight: bold;
+							/*		transform: scale(1.1);
+				*/	}
+		#content{
+			width:1520px;
+			float:left;
+			background-color: pink;
+						height:1000px	;
+		}
+		#right{
+			height:1000px;
+			float:right;
+			width:200px;
+			background: blue;
+		}
+		#search{
+			float:right;
+			padding-right:20px;
+			padding-top:10px;
+		}
+		#right img
+		{
+			transform: scale(0.6);
+			padding:20px 20px;
+			float:left;
+		}
+		#center
+		{
+			width: 300px;
+			height: 300px;
+			background-color: black;
+			margin-left: 610px;
+			animation-name: rainbow1;
+			animation-duration: 100s;
+			position: relative;
+		}
+		@keyframes rainbow1{
+			0%{
+				background-color:green;
+				top: 0px;
+				left:0px;
+			}
+			50%{
+				background-color:blue;
+				top:200px;
+				left:200px;
+			}
+			100%{
+				background-color: red;
+				top:0px;
+				left: 0px;
+			}
+		}
+		#ball {
+			width: 70px;
+			height: 70px;
+			margin: 500px 500px;
+			position: fixed;
+			left: 20%;
+			border-radius: 50%;
+			background: linear-gradient(35deg,#ccffff,#ffcccc);
+			animation-name: bounce;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
+	@keyframes bounce{
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: 249px;
+      width: 130px;
+      height: 70px;
+    }
+    100% {
+      top: 0px;
+   	 }
+   }
+		
+	</style>
+	<body>
+		<div id="main">
+			<div id="head">
+				<h1><strong>My first layout</strong></h1>
+			</div>
+			<div id="menu">
+				<a href="#">1 cái gì đó</a>
+				<a href="#">Vẫn là 1 cái gì đó</a>
+				<a href="#">Là 1 cái gì đó khác</a>
+				<div id=search>
+					<input type="text" placeholder="Search something">
+					<button type="submits">Search</button>
+				</div>
+			</div>
+			<div id="left">
+				<a href="#">Danh muc san pham</a>
+				<a href="#">Uu dai trong ngay</a>
+				<a href="#">Lien he voi chung toi</a>
+			</div>
+			<div id="content">
+				<div id="center">
+				</div>
+				<div id="ball">
+				</div>
+			</div>
+			<div id="right">
+				<!-- 				<img src="https://i.pinimg.com/236x/06/6f/0b/066f0bc9a6ccc39cb71db3675ac13b73--pretty-cats-cat-s.jpg">
+				-->
+			</div>
+			<div id="footer">
+			</div>
+		</div>
+	</body>
+</html>

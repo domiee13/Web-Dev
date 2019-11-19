@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Onclick</title>
+</head>
+<body>
+
+	<input id="newItem" type="text" name="">
+	<button id = "add-btn">ADD</button>
+	<h1>Todo list</h1>
+	<div id="todoList">
+		<ul>
+			<!-- <li>Go to school</li>
+			<li>Cooking lunch</li>
+			<li>Code like a god</li> -->
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var storageKey = 'list';
+		var dataString = localStorage.getItem(storageKey);
+		var todo = JSON.parse(dataString);
+		
+		var todoList = document.getElementById('todoList');
+		var addBtn = document.getElementById("add-btn");
+	
+
+		if(dataString){
+			todo = JSON.parse(dataString);
+		}
+		else todo = [];
+
+	
+ 		// addBtn.onclick = addItem;
+
+ 		addBtn.addEventListener('click',addItem);
+ 		todoList.addEventListener('click',onListClicked);
+ 		function onListClicked(event){
+ 			var button = event.target;
+ 			var i = JSON.parse(button.dataset.id);
+ 			console.log(i);
+ 			todo.splice(i,1);
+ 			render();
+ 			//Update data
+ 			localStorage.setItem(storageKey, JSON.stringify(todo));
+ 		}
+		function addItem(){
+			//Lay item tu input
+			var input = document.getElementById('newItem');
+			var newItem = input.value;
+			//Them item vao todo list
+			todo.push(newItem);
+			//re-render
+			render();
+			input.value = "";
+			//Store data\
+			localStorage.setItem(storageKey, JSON.stringify(todo));
+		}
+		function render(){
+			var content = "";
+			content = todo.map(function(item,index){
+				return '<li>' + item + ' <button data-id="'+index+'">Delete</button></li>';
+			});
+			todoList.innerHTML = content.join('');	
+		}
+
+
+		
+		render();
+	</script>
+</body>
+</html>

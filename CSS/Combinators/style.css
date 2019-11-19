@@ -1,0 +1,15 @@
+/*Tim nhung item la con cua list 1*/
+/*.list-1 > .item {
+	border: 2px solid red;
+}*/
+
+/*Tim item ngay sau item 2 trong list 1*/
+/*.list-1 .item-2 + .item{
+	color:green;
+}
+*/
+
+/*Tim nhung item sau item 2 trong list 2*/
+.list-2 .item-2 ~ .item{
+	color:aqua;
+}

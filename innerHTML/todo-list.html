@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo-list</title>
+</head>
+<body>
+	<div id = "todo-list">
+		<!-- <ul > -->
+			<!-- <li>Code in morning</li>
+			<li>Code in afternoon</li>
+			<li>Code in evening</li> -->
+		<!-- </ul> -->
+	</div>
+	
+	<script type="text/javascript">
+		var todo = [
+			'Go to fucking school',
+			'Cooking lunch',
+			'Code like a god'
+		]
+		var todoList = document.getElementById("todo-list");
+		var content = '';
+		content = todo.map(function(item){
+			return '<li>' + item + '</li>';
+		});
+		console.log(content);
+		todoList.innerHTML = '<ol>' + content.join('') + '</ol>';
+	</script>
+</body>
+</html>

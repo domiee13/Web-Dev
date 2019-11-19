@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is my Landing Page</title>
+</head>
+<style type="text/css">
+	:root{
+		margin: 0;
+		padding:0;
+	}
+	.button{
+		background-color: yellow;
+		height: 20px;
+		width: 120px;
+		text-align: center;
+		margin-right: 0px;
+		border:none;
+		display:inline-block;
+	}
+	.button:hover{
+		background-color: orange;
+	}
+	#content{
+		display: grid;
+		grid-template-columns: 48px 1fr;
+	}
+	h3{
+		padding:0;
+		margin:0;
+	}
+	#icon1,#icon2,#icon3{
+		margin-top: 20px;
+	}
+	#price{
+		display: grid;
+		grid-template-columns: 250px 250px 250px;
+		grid-gap:10px;
+	}
+	#box1,#box2,#box3{
+		background-color: white;
+		border-color: black;
+		border-style: solid;
+		text-align: center;
+		width: 250px;
+		height: 250px;
+		border-width: 1px;
+		margin-top: 100px;
+		margin-left:-25px;
+		margin-right: 1000px;
+
+	}
+	#gray{
+		background-color: gray;
+		height: 30px;
+		text-align: center;
+		padding-top: 13px;
+	}
+	#main{
+		margin-left: 250px;
+	
+	}
+	
+	#logo{
+		padding-top:20px;
+		grid-column: 1;
+  		width: 130%;
+ 		align-self: center;
+	}
+	#top{
+		display: grid;
+		grid-template-columns: 300px 300px;
+		grid-gap: 650px;
+	}
+	#nav-bar {
+		align-self: center;
+		margin-right: 5px;
+		display:grid;
+		grid-template-columns: 100px 100px 100px;
+		align-items: center;
+		text-align: center;
+
+	}
+	#nav-bar a{
+		text-decoration: none;
+	}
+	#top{
+		margin-left: -200px;
+	}
+	#top-content{
+		margin-left: 150px;
+	}
+	#email{
+		margin-left: 160px;
+		align-items: center;
+	}
+	.button1{
+		margin-left: 25px;
+		background-color: yellow;
+/*		display: inline-block;
+*/		border:none;
+		margin-top: 5px;
+		width: 150px;
+		height: 30px;
+		font-weight: bold;
+
+	}
+	.button1:hover{
+		background-color: orange;
+/*		text-transform: lowercase;
+*/	}
+	#input{
+		width: 200px;
+		height: 30px;
+	}
+	#price{
+		margin-left: 50px;
+	}
+</style>
+<body>
+
+<div id = "main">
+	<div id = "top">
+		<img id = "logo" src ="https://s3.amazonaws.com/freecodecamp/original_trombones.png">
+		<nav id="nav-bar">
+			<a href="#features" class="nav-link">Features</a>
+			<a href="#howitword" class="nav-link">How It Works</a>
+			<a href="#price" class="nav-link">Pricing</a>
+		</nav>
+		
+	</div>
+	<div id = "top-content">
+		<h1> Handcrafted, home-made masterpieces </h1>
+		<form id="email">
+		<input id="input" type="text" name="" placeholder="Enter ur email address" required>
+		<div><input id="button"  class="button1" type="submit" value="GET STARTED"></div>
+		</form>
+	</div>
+	<div id = "content">
+		<div id = "icon1">
+			<img src = "https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/48x48/dude5.png">
+			</div>
+		<div id = "para1">
+			<h3>Premium Materials</h3>
+			<p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
+		</div>
+		<div id = icon2>
+			<img src = "https://cdn0.iconfinder.com/data/icons/black-48x48-icons/48/Cargo.png">		
+		</div>
+		<div id="para2">
+			<h3>Fast Shipping</h3>
+			<p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+		</div>
+		<div id = icon3>
+			<img src = "http://files.softicons.com/download/internet-icons/face-avatars-icons-by-deleket/png/48/FB05.png">
+		</div>
+		<div id= "para3">
+			<h3>Quality Assurance</h3>
+			<p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
+		</div>
+	</div>
+	<div id = "price" >
+		<div id = "box1">
+			<div id="gray">TENOR TROMBONE</div>
+			<h1>$600</h1>
+			<p>
+				Lorem ipsum.<br>
+				Lorem ipsum.<br>
+				Lorem ipsum dolor.<br>
+				Lorem ipsum.
+			</p>
+			<input id="button" class="button" type="submit" value="SELECT">
+		</div>
+		<div id = "box2">
+			<div id="gray">BASS TROMBONE</div>
+			<h1>$900</h1>
+			<p>
+				Lorem ipsum.<br>
+				Lorem ipsum.<br>
+				Lorem ipsum dolor.<br>
+				Lorem ipsum.
+			</p>
+			<input id="button"  class="button" type="submit" value="SELECT">
+
+		</div>
+		<div id = "box3">
+			<div id="gray">VALVE TROMBONE</div>
+			<h1>$1200</h1>
+			<p>
+				Plays similar to a Trumpet<br>
+				Great for Jazz Bands<br>
+				Lorem ipsum dolor.<br>
+				Lorem ipsum.
+
+			</p >
+			<input id="button"  class="button" type="submit" value="SELECT">
+
+
+		</div>
+	</div>
+</div>
+</body>
+</html>

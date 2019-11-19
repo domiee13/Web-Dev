@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Onclick</title>
+</head>
+<body>
+	<a href="danhBa.html">DanhBa</a>
+	<input id="newItem" type="text" name="">
+	<button id = "add-btn">ADD</button>
+	<h1>Todo list</h1>
+	<div id="todoList">
+		<ul>
+			<!-- <li>Go to school</li>
+			<li>Cooking lunch</li>
+			<li>Code like a god</li> -->
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var data = [];
+		var storageKey = 'list';
+		var dataString = localStorage.getItem(storageKey);
+		var todo = JSON.parse(dataString);
+
+		if(dataString){
+			todo = JSON.parse(dataString);
+		}
+		else todo = [];
+
+		var addBtn = document.getElementById("add-btn");
+ 		// addBtn.onclick = addItem;
+
+ 		addBtn.addEventListener('click',addItem);
+
+		function addItem(){
+			//Lay item tu input
+			var input = document.getElementById('newItem');
+			var newItem = input.value;
+			//Them item vao todo list
+			todo.push(newItem);
+			//re-render
+			render();
+			input.value = "";
+			//Store data\
+			localStorage.setItem(storageKey, JSON.stringify(todo));
+		}
+		function render(){
+			var todoList = document.getElementById('todoList');
+			var content = "";
+			content = todo.map(function(item){
+				return '<li>' + item + '</li>';
+			});
+			todoList.innerHTML = content.join('');	
+		}
+
+
+		
+		render();
+	</script>
+</body>
+</html>

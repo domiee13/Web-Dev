@@ -1,0 +1,29 @@
+#pattern{
+	background-image: url(./pattern.jpg);
+	height: 200px;
+	width: 1000px;
+	margin-bottom: 10px;
+	background-size: 50%;
+}
+#image{
+	background-image: url(./bg.jpg);
+	height: 200px;
+	width: 1000px;
+	background-size: cover;
+	background-position: 0 -10px;
+	margin-bottom: 10px;
+}
+#parallax{
+	background-image: url(./bg1.jpg);
+	height: 200px;
+	width: 1000px;
+	background-size: cover;
+	background-attachment: fixed;
+	margin-bottom: 10px;
+}
+#normal{
+	background-color: black;
+	height: 200px;
+	width: 1000px;
+	margin-bottom: 10px;
+}

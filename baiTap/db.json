@@ -1,0 +1,16 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "content": "Nấu thịt kho tàu cho bữa tối"
+    },
+    {
+      "id": "2",
+      "content": "Code code code"
+    },
+    {
+      "id": "3",
+      "content": "Code"
+    }
+  ]
+}

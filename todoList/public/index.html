@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      #add-btn{
+        background-color:aqua;
+        color:black;
+        display: block;
+        border: none;
+        width:60px;
+        height:30px;
+        margin-top:10px;
+      }
+      #add-btn:hover{
+        transform: scale(1.2);
+        color:red;
+
+      }
+      #newItem{
+        width: px;
+        height: 40px;
+      }
+      #main{
+        background-color: black;
+        width: 250px;
+        color:#149414;
+      }
+      #todoList{
+        color:#149414;
+      }
+      body{
+        background-color: black;
+        color:green;
+        padding-left: 400px;
+      }
+
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.2.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.2.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.2.1/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/7.2.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.2.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <style media="screen">
+      body { font-family: Roboto, Helvetica, Arial, sans-serif;  }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+         #message { margin-top: 0; background: white; box-shadow: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Messenger</h1>
+    <input id="newItem" type="text" name="">
+    <button id = "add-btn">ADD</button>
+    <h1 style="color:red">Todo list</h1>
+    <div id="todoList">
+      
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+       var db = firebase.firestore();
+       function display(){
+          db.collection("todos").get().then(function(snap){
+          render(snap.docs);
+        });
+   
+       }
+        display();
+        var addBtn = document.getElementById("add-btn");
+            // addBtn.onclick = addItem;
+
+        addBtn.addEventListener('click',addItem);
+        var input = document.getElementById('newItem');
+        input.value = sessionStorage.getItem('draft');
+        // input.addEventListener('change',updateSessionStorage);
+        // function updateSessionStorage(){
+        //   sessionStorage.setItem('draft',input.value);
+        // }
+        function addItem(){
+          //Lay item tu input
+          var newItem = input.value;
+          //Them item vao todo list
+          //Hoac co the de bien nhu nay
+          // var newItem  = {content: input.value} thi o duoi chi can add(newItem)
+          db.collection("todos").add({
+            content:newItem
+          });
+          //re-render
+          input.value = "";
+          display();
+          //Store data\
+        }
+
+
+        function render(items){
+          var todoList = document.getElementById('todoList');
+          var content = "";
+          content = items.map(function(item){
+            return '<li>' + item.data().content + '</li>';
+          });
+          todoList.innerHTML = '<ul>' +  content.join('')+ '</ul>';  
+        }
+      });
+    </script>
+  </body>
+</html>

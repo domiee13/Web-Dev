@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hello, this is fucking todo list</title>
+</head>
+<body>
+
+	<h1>ADD TODO LIST</h1>
+	<input id="input-id" type="text" name="" placeholder="Id cong viec muon them">
+	<input id="input-content" type="text" name="" placeholder="Noi dung cong viec">
+	<button id = "addBtn">ADD</button>
+	
+	<h1>EDIT TODO LIST</h1>
+	<input id = "modified-id" type="text" name="" placeholder="Id cong viec muon thay doi">
+	<input id="editContent" type="text" name="" placeholder="Noi dung thay doi">
+	<button id="modified-btn">EDIT</button>
+	
+	<h1>DELETE</h1>
+	<input type="text" placeholder="Nhap cong viec ban muon xoa" name="" id="deleteItem">
+	<button id="delete-btn">DELETE</button>
+
+	<h2>Danh sach cong viec can lam</h2>
+	<div id="main"></div>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript">
+		var url = 'http://localhost:9081/todos';
+
+		function render(data){
+			var main = document.getElementById('main');
+			var noidung = data.map(function(item){
+				return '<ul><li>' + item.id + ": " + item.content + '</li></ul>';
+			});
+			main.innerHTML = noidung.join("");
+		}
+
+
+		function display(){
+			//GET
+			axios.get(url).then(function(res){
+				var data = res.data;
+				render(data);
+			});
+		}
+		display();
+		
+		var addBtn = document.getElementById('addBtn');
+		addBtn.addEventListener('click',addItem);
+		//Add item
+		function addItem(){
+			var id = document.getElementById('input-id');
+			var content = document.getElementById('input-content');
+			//POST
+			axios.post(url,{
+				id :id.value,
+				content:content.value
+			}).then(function(res){
+				console.log(res.data);
+			}).catch(function(err){
+				console.log(err);
+			});
+			display();
+			id.value = "";
+			content.value = "";
+
+			
+		}
+		//Edit item
+		var editBtn = document.getElementById('modified-btn');
+		editBtn.addEventListener('click',editItem);
+		function editItem(){
+			//Chu y neu khong se quen .value !!!
+			var editContent = document.getElementById('editContent');
+ 			var id = document.getElementById('modified-id');
+ 			var editUrl = (url +'/'+ id.value);
+ 			console.log(editUrl);
+			//PUT
+			axios.put(editUrl,{
+				id:id.value,
+				content:editContent.value
+			}).then(function(res){
+				console.log(res.data);
+			}).catch(function(err){
+				console.log(err);
+			});
+			display();
+			id.value = "";
+			editContent.value = "";
+		}
+		//Delete item
+		var deleteBtn = document.getElementById('delete-btn');
+		deleteBtn.addEventListener('click',deleteItem);
+
+		function deleteItem(){
+			var deleteId = document.getElementById('deleteItem');
+			var deleteUrl = url + '/'+  deleteId.value;
+			//DELETE
+			axios.delete(deleteUrl).then(function(res){
+				console.log(res.data);
+			}).catch(function(err){
+				console.log(err);
+			});
+			display();
+			deleteId.value = "";
+
+		}
+
+
+	</script>
+</body>
+</html>

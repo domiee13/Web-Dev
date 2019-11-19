@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" id = "input" value="">
+        <div id = "res"></div>
+    </body>
+    <script>
+        var text = document.getElementById("input");
+        var res = document.getElementById("res")
+        text.addEventListener('keyup',function(){
+            res.innerHTML = text.value;
+
+        });
+        text.addEventListener('keyup',function(){
+            if(text.value.length >5){
+                alert("Bạn đã nhập nhiều hơn 5 kí tự");
+            }
+        })
+        window.addEventListener("resize",function(){
+            alert("Bạn vừa zoom trình duyệt");
+        })
+    </script>
+</html>
